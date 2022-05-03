@@ -1,9 +1,8 @@
 package com.pi.gest.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import com.pi.gest.dto.ArticleDto;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +11,7 @@ import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+@SuperBuilder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,12 +23,14 @@ public class LigneVente extends AbstactEntity{
     @JoinColumn(name="idVente")
     private Vente vente;
 
+    private Article article;
     private BigDecimal quantite;
 
     private BigDecimal prixUnitaire;
 
     private Instant dateVente;
 
+    private Integer idEntreprise;
 
     private String comment;
 }

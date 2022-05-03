@@ -1,10 +1,8 @@
 package com.pi.gest.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -18,10 +16,12 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
+@SuperBuilder
 public class CommandeFournisseur extends AbstactEntity{
 
-    private String code;
+    private String codeCmdFournisseur;
     private Instant dateCommande;
+    private Integer idEntreprise;
 
 
     @ManyToOne

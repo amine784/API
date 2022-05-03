@@ -1,18 +1,15 @@
 package com.pi.gest.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -22,10 +19,11 @@ public class Article extends AbstactEntity{
     private String codeArticle ;
     private String designation ;
     private String ImageArticle;
+    private Integer idEntreprise;
 
     @ManyToOne
     @JoinColumn(name = "IdCategory")
-    private  Category category;
+    private  Category categorie;
 
 
     @Column(name="prixUnitaireHorsTaxe")
@@ -35,4 +33,27 @@ public class Article extends AbstactEntity{
     private BigDecimal TVA;
 
     private BigDecimal prixUnitaireTTC;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneVente> ligneVentes;
+
+
+
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneCommandeClient> ligneCommandeClients;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
+
+    @OneToMany(mappedBy = "article")
+    private List<OperationStock> operationStocks;
+
+
+    @ManyToOne
+    @JoinColumn(name = "idcategory")
+    private Category category;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneVente> ligneVente;
 }

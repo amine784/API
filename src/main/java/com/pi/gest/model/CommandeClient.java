@@ -1,10 +1,8 @@
 package com.pi.gest.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -18,10 +16,12 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
+@SuperBuilder
 public class CommandeClient extends AbstactEntity{
 
     private String codeCommandeClient;
     private Instant dateCommandeClient;
+    private Integer idEntreprise;
 
     @ManyToOne
     @JoinColumn(name = "idClient")

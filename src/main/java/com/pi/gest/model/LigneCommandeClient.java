@@ -1,10 +1,8 @@
 package com.pi.gest.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -16,6 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
+@SuperBuilder
 public class LigneCommandeClient extends AbstactEntity{
 
     @ManyToOne
@@ -24,9 +23,12 @@ public class LigneCommandeClient extends AbstactEntity{
 
     @ManyToOne
     @JoinColumn(name = "idCommandeClient")
-    private Article commandeClient;
+    private CommandeClient commandeClient;
 
     private BigDecimal quantite;
 
     private BigDecimal prixUnitaire;
+
+
+    private Integer idEntreprise;
 }

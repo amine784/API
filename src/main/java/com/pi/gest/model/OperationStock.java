@@ -1,10 +1,8 @@
 package com.pi.gest.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -12,6 +10,7 @@ import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+@SuperBuilder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,4 +29,7 @@ public class OperationStock extends AbstactEntity{
     private Article article;
 
     private TypeOperationStock typeOperationStock;
+
+    private SourceOperationStock sourceOperationStock;
+    private Integer idEntreprise;
 }

@@ -1,16 +1,15 @@
 package com.pi.gest.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.List;
 
+@SuperBuilder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,9 +19,11 @@ public class Fournisseur extends AbstactEntity{
 
     private String firstName;
     private String lastName;
-    private String picClient;
-    private String emailClient;
-    private String numberClient;
+    private String picFournisseur;
+    private String emailFournisseur;
+    private String numberFournisseur;
+
+    private Integer idEntreprise;
 
     @Embedded
     private Address address;

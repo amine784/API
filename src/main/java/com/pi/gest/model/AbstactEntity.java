@@ -19,7 +19,7 @@ import java.time.Instant;
 @EntityListeners(AuditingEntityListener.class)
 public class AbstactEntity {
 
-    @GeneratedValue(strategy = GenerationType.AUTO )
+
     @Id
     private Integer Id;
 

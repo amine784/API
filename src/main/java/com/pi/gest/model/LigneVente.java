@@ -23,7 +23,13 @@ public class LigneVente extends AbstactEntity{
     @JoinColumn(name="idVente")
     private Vente vente;
 
+
+    @ManyToOne
+    @JoinColumn(name = "idarticle")
     private Article article;
+
+
+
     private BigDecimal quantite;
 
     private BigDecimal prixUnitaire;

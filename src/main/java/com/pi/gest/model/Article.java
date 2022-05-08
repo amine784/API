@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
+@Table(name = "article")
 public class Article extends AbstactEntity{
 
     private String codeArticle ;
@@ -21,9 +22,7 @@ public class Article extends AbstactEntity{
     private String ImageArticle;
     private Integer idEntreprise;
 
-    @ManyToOne
-    @JoinColumn(name = "IdCategory")
-    private  Category categorie;
+
 
 
     @Column(name="prixUnitaireHorsTaxe")
@@ -34,8 +33,7 @@ public class Article extends AbstactEntity{
 
     private BigDecimal prixUnitaireTTC;
 
-    @OneToMany(mappedBy = "article")
-    private List<LigneVente> ligneVentes;
+
 
 
 
@@ -51,9 +49,13 @@ public class Article extends AbstactEntity{
 
 
     @ManyToOne
-    @JoinColumn(name = "idcategory")
+    @JoinColumn(name = "idCategory")
     private Category category;
+
 
     @OneToMany(mappedBy = "article")
     private List<LigneVente> ligneVente;
+
+
+
 }

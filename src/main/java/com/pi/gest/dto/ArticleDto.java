@@ -37,7 +37,7 @@ public class ArticleDto {
                 .prixUnitaireTTC(article.getPrixUnitaireTTC())
                 .TVA(article.getTVA())
                 .idEntreprise(article.getIdEntreprise())
-                .categorie(CategoryDto.fromEntity(article.getCategorie()))
+                .categorie(CategoryDto.fromEntity(article.getCategory()))
                 .build();
         }
     public static Article toEntity(ArticleDto articleDto) {
@@ -51,7 +51,7 @@ public class ArticleDto {
         article.setTVA(articleDto.getTVA());
         article.setPrixUnitaireHT(articleDto.getPrixUnitaireHT());
         article.setPrixUnitaireTTC(articleDto.getPrixUnitaireTTC());
-        article.setCategorie(CategoryDto.toEntity(articleDto.getCategorie()));
+        article.setCategory(CategoryDto.toEntity(articleDto.getCategorie()));
 
     return article;
     }

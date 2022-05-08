@@ -1,7 +1,7 @@
 package com.pi.gest.model;
 
 
-import com.pi.gest.dto.ArticleDto;
+
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

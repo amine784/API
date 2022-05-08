@@ -2,7 +2,7 @@ package com.pi.gest.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pi.gest.model.Role;
-import com.pi.gest.model.Utilisateur;
+
 import lombok.Builder;
 import lombok.Data;
 

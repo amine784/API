@@ -21,14 +21,15 @@ public class AbstactEntity {
 
 
     @Id
-    private Integer Id;
+    @GeneratedValue
+    private Integer id;
 
-    @JsonIgnore
+
     @Column(nullable = false)
     @CreatedDate
     private Instant createdAt ;
 
-    @JsonIgnore
+
     @LastModifiedDate
     private Instant updatedAt;
 }

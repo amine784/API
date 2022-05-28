@@ -29,7 +29,7 @@ public class CommandeClientValidator {
           //  errors.add("Veuillez renseigner l'etat de la commande");
         //}
         if (commandeClientDto.getClient() == null || commandeClientDto.getClient().getId() == null) {
-            errors.add("Veuillez renseigner le client");
+            errors.add("Veuillez introduire le client");
         }
 
         return errors;

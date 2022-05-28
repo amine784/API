@@ -12,8 +12,8 @@ public interface OperationStockRepository extends JpaRepository <OperationStock,
 
 
 
-   // @Query("select sum(m.quantite) from OperationStock m where m.article.id = :idArticle")
-    //BigDecimal stockReelArticle(@Param("idArticle") Integer idArticle);
+   @Query("select sum(m.quantite) from OperationStock m where m.article.id = :idArticle")
+    BigDecimal stockReelArticle(@Param("idArticle") Integer idArticle);
 
-    //List<OperationStock> findAllByArticleId(Integer idArticle);
+    List<OperationStock> findAllByArticleId(Integer idArticle);
 }

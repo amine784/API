@@ -4,10 +4,7 @@ package com.pi.gest.model;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.List;
 
@@ -22,6 +19,10 @@ public class CommandeClient extends AbstactEntity{
     private String codeCommandeClient;
     private Instant dateCommandeClient;
     private Integer idEntreprise;
+
+    @Column(name = "statusommande")
+    @Enumerated(EnumType.STRING)
+    private StatusCommande statusCommande;
 
     @ManyToOne
     @JoinColumn(name = "idClient")

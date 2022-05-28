@@ -4,9 +4,7 @@ package com.pi.gest.model;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
 
@@ -28,6 +26,7 @@ public class OperationStock extends AbstactEntity{
     @JoinColumn(name="idArticle")
     private Article article;
 
+    @Enumerated(EnumType.STRING)
     private TypeOperationStock typeOperationStock;
 
     private SourceOperationStock sourceOperationStock;

@@ -2,6 +2,7 @@ package com.pi.gest.dto;
 
 
 import com.pi.gest.model.CommandeClient;
+import com.pi.gest.model.StatusCommande;
 import lombok.Builder;
 import lombok.Data;
 
@@ -19,7 +20,7 @@ public class CommandeClientDto {
     private String codeCommandeClient;
     private Instant dateCommandeClient;
     private Integer idEntreprise;
-
+    private StatusCommande statusCommande;
 
     private ClientDto client;
 
@@ -53,5 +54,8 @@ public class CommandeClientDto {
         commandeClient.setClient(ClientDto.toEntity(commandeClientDto.getClient()));
 
     return commandeClient;
+    }
+    public boolean isCommandeLivree() {
+        return StatusCommande.LIVREE.equals(this.statusCommande);
     }
 }
